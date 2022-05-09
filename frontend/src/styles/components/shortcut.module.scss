@@ -1,0 +1,30 @@
+.shortcut {
+  gap: 0.5rem; /*i used 10 px in figma design*/
+  padding: 1rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0.5rem;
+  border: 0.25rem solid var(--color-greys-normal);
+
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-greys-normal);
+
+  fill: var(--color-greys-normal);
+
+  transition: 0.125s ease-out;
+
+  cursor: pointer;
+
+  &:hover {
+    fill: var(--color-greys-active);
+    color: var(--color-greys-active);
+    border-color: var(--color-greys-active);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

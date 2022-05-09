@@ -1,0 +1,31 @@
+.button {
+  gap: 0.5rem; /*i used 10 px in figma design*/
+  padding: 1rem 2rem;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+
+  border-radius: 0.5rem;
+
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-white-normal);
+
+  fill: var(--color-white-normal);
+
+  background-color: var(--color-main-normal);
+
+  box-shadow: 0px 0px 24px 24px rgba(0, 0, 0, 0.125);
+
+  cursor: pointer;
+
+  transition: 0.125s ease-out;
+
+  &:hover {
+    transform: scale(0.95);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style: none;
+  user-select: none;
+  border-radius: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+
+  /**/
+  z-index: 2;
+}
+
+:root {
+  /*color*/
+  --color-background: hsla(0, 0%, 10%, 1);
+
+  --color-greys-normal: hsla(0, 0%, 50%, 1);
+  --color-greys-active: hsla(0, 0%, 75%, 1);
+
+  --color-white-normal: hsla(0, 0%, 100%, 1);
+
+  --color-main-normal: hsl(223, 65%, 54%);
+  --color-main-light: hsl(223, 56%, 60%);
+
+  /*break-points*/
+  --break-point-1: 1280px; /*change main menu headline size*/
+  --break-point-2: 900px; /*change navigation to sandwich + reduce padding*/
+  --break-point-3: 720px; /*reduce padding and make fonts a little bit smaller and paddings also*/
+  --break-point-4: 420px; /*truly reduce font-size and make padding to minimum*/
+
+  /*z-indeces*/
+  --default-z-index: 2;
+  --scene-z-index: 2;
+}
+
+html,
+#root,
+body {
+  height: 100%;
+}
+
+html {
+  background: #333333;
+}
+
+body {
+  padding: 128px;
+  /*background: var(--color-background);*/
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(25, 25, 25, 0) 0%,
+    #191919 100%
+  );
+}
+
+body {
+  overflow: hidden;
+}
+
+@media (max-width: 1280px) {
+  /*var(--break-point-1)*/
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  /*var(--break-point-2)*/
+  body {
+    padding: 96px;
+  }
+}
+
+@media (max-width: 720px) {
+  /*var(--break-point-3)*/
+  body {
+    padding: 64px;
+    font-size: 1px;
+  }
+}
+
+@media (max-width: 420px) {
+  /*var(--break-point-4)*/
+  body {
+    padding: 32px;
+  }
+}
