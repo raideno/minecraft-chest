@@ -22,7 +22,7 @@ type GLTFResult = GLTF & {
 export default function Model(props: JSX.IntrinsicElements["group"]) {
   const group = useRef<THREE.Group | null>(null);
   const { nodes, materials } = useGLTF(
-    "/models/bottom.glb"
+    "/minecraft-chest/models/bottom.glb"
   ) as unknown as GLTFResult;
   return (
     <group ref={group} {...props} dispose={null}>

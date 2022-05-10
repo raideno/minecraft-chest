@@ -9,7 +9,7 @@ import Space from "../components/icons/Space";
 
 import styles from "../styles/routes/main.module.scss";
 
-import Chest from "../components/Chest";
+/*import Chest from "../components/Chest";*/
 import Model from "../components/models/variant";
 import CameraController from "../components/models/CameraController";
 
