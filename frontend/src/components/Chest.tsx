@@ -28,12 +28,16 @@ const Chest = () => {
     camera.position.y = 5;
   }, []);
 
+  useFrame(() =>
+    ChestRef.current ? (ChestRef.current!.rotation.y += 0.001) : null
+  );
+
   return (
     <motion.group
       /*initial={{ scale: 0, z: 0 }}*/
       animate={{ scale: 1, z: -7.5 }}
       exit={{ scale: 0 }}
-      /*ref={ChestRef}*/
+      ref={ChestRef as any}
       onClick={handleClick}
       rotation={[0, 3, 0]}
       position={[0, 5, -7.5]}

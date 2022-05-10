@@ -1,4 +1,5 @@
 import React from "react";
+import { useAnimation, motion } from "framer-motion";
 import styles from "../styles/components/shortcut.module.scss";
 
 const Shortcut = ({
@@ -8,34 +9,38 @@ const Shortcut = ({
   children: React.ReactNode;
   key_?: string;
 }) => {
-  const ref = React.useRef<HTMLDivElement | null>(null);
+  const controls = useAnimation();
+  /*const ref = React.useRef<HTMLDivElement | null>(null);*/
 
   React.useEffect(() => {
-    const fonction = ({ key: pressed }: KeyboardEvent) => {
+    const fonction = async ({ key: pressed }: KeyboardEvent) => {
       if (key_ !== pressed) return;
 
-      const node = ref.current!;
+      /*const node = ref.current!;*/
 
-      node.style.transform = "scale(0.95)";
-      node.style.fill = "var(--color-greys-active)";
-      node.style.color = "var(--color-greys-active)";
-      node.style.borderColor = "var(--color-greys-active)";
-
-      setTimeout(() => {
-        node.style.transform = "scale(1)";
-        node.style.fill = "var(--color-greys-normal)";
-        node.style.color = "var(--color-greys-normal)";
-        node.style.borderColor = "var(--color-greys-normal)";
-      }, 125);
+      await controls.start({
+        scale: 0.95,
+        fill: "var(--color-greys-active)",
+        color: "var(--color-greys-active)",
+        borderColor: "var(--color-greys-active)",
+        transition: { duration: 0.125 },
+      });
+      return await controls.start({
+        scale: 1,
+        fill: "var(--color-greys-normal)",
+        color: "var(--color-greys-normal)",
+        borderColor: "var(--color-greys-normal)",
+        transition: { duration: 0.125 },
+      });
     };
 
     window.addEventListener("keydown", fonction);
     return () => window.removeEventListener("keydown", fonction);
   });
   return (
-    <div ref={ref} className={styles.shortcut}>
+    <motion.div animate={controls} /*ref={ref}*/ className={styles.shortcut}>
       {children}
-    </div>
+    </motion.div>
   );
 };
 

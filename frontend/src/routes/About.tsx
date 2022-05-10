@@ -4,8 +4,13 @@ import Email from "../components/icons/Email";
 import Discord from "../components/icons/Discord";
 import Twitter from "../components/icons/Twitter";
 import styles from "../styles/routes/about.module.scss";
+import Scene from "../components/Scene";
+import Model from "../components/models/variant";
+import CameraController from "../components/models/CameraController";
 
 const About = () => {
+  const copy = (string: string) => navigator.clipboard.writeText(string);
+
   return (
     <div className={styles.container}>
       <div className={styles.split}>
@@ -34,22 +39,35 @@ const About = () => {
           >
             <div className={styles.title}># Contacts</div>
             <ul className={styles.links}>
-              <li className={styles.link}>
+              <li
+                className={styles.link}
+                onClick={copy.bind(null, "nadirkichou@hotmail.fr")}
+              >
                 <Email />
                 nadirkichou@hotmail.fr
               </li>
-              <li className={styles.link}>
+              <li
+                className={styles.link}
+                onClick={copy.bind(null, "raiden#5656")}
+              >
                 <Discord />
                 raiden#5656
               </li>
-              <li className={styles.link}>
+              <li className={styles.link} onClick={copy.bind(null, "@raiden")}>
                 <Twitter />
                 @raiden
               </li>
             </ul>
           </motion.div>
         </div>
-        <div className={styles.right}>chest</div>
+        <div className={styles.right}>
+          <Scene>
+            <CameraController />
+            <ambientLight intensity={0.25} />
+            <pointLight position={[5, 5, 5]} />
+            <Model />
+          </Scene>
+        </div>
       </div>
     </div>
   );

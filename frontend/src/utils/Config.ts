@@ -1,5 +1,5 @@
 const Config = {
-  production: true,
+  production: false,
   base: "/minecraft-chest/",
 };
 

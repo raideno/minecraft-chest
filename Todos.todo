@@ -1,7 +1,0 @@
-- Create the interface
-- Import models
-- Size Prop for Icons
-- Organize project and make it modular
-- Home.tsx, create variable & configuration files to use in .tsx files (colors, routes, links)
-- Add general classes for transitions & hover and active effects
-- Framer Motion variants and share them between components

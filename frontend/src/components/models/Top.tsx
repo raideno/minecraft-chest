@@ -22,7 +22,7 @@ type GLTFResult = GLTF & {
 const Model = (props: JSX.IntrinsicElements["group"]) => {
   const group = useRef<THREE.Group | null>(null);
   const { nodes, materials } = useGLTF(
-    Config.production ? Config.base : "" + "/models/bottom.glb"
+    "/models/top.glb"
   ) as unknown as GLTFResult;
 
   return (
